@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins, sans-serif;
+}
+
+:root {
+    --primary-color: #003147;
+    --secondary-color: #03a9f4;
+
+    --tertiary-color: #081921;
+    --p-color: #333;
+    --company-color: #848c90;
+    --experience-h4-color: #2a7da2;
+    --skill-h4-color: #848c99;
+    --skill-percent-container: #f0f0f0;
+}
+
+body {
+    background-color: lightblue;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    background-color: white;
+    max-width: 1000px;
+    /*margin: 50px auto;*/
+    margin: 50px;
+    /* offset_x | offset_y | blur-radius | color*/
+    box-shadow: 0 35px 55px rgba(0, 0, 0, 0.25);
+}
+
+.left_side {
+    background-color: var(--primary-color);
+    padding: 40px;
+}
+
+/* about_me section */
+.about_me {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 20px;
+}
+
+.about_me img {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+}
+
+.about_me h2,
+.about_me h3 {
+    color: white;
+    text-transform: uppercase;
+}
+
+.about_me h2 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.about_me h3 {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.left_side .title {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+/* Contact info section*/
+
+.contact_info ul li {
+    list-style-type: none;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact_info ul li i {
+    color: var(--secondary-color)
+}
+
+.contact_info ul li .text {
+    color: #fff;
+    font-weight: 300;
+}
+
+/* education section*/
+
+.education li {
+    list-style-type: none;
+    margin: 10px 0;
+}
+
+.education h4 {
+    color: var(--secondary-color);
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.education h5 {
+    color: white;
+    font-weight: 300;
+}
+
+.education h5.degree {
+    font-weight: 500;
+}
+
+/* languages section */
+.languages li {
+    list-style-type: none;
+    margin: 10px 0;
+    color: #fff;
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.languages .percent_container {
+    height: 6px;
+    background-color: var(--tertiary-color);
+    margin-top: 5px;
+}
+
+.languages .percent {
+    height: 100%;
+    background-color: var(--secondary-color);
+}
+
+/* Right side*/
+
+.right_side {
+    padding: 40px;
+}
+
+.right_side .title {
+    color: var(--primary-color);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.right_side p {
+    color: var(--p-color);
+}
+
+/* Profile section */
+
+.profile {
+    margin-bottom: 40px;
+}
+
+/* Experience section*/
+
+.experience .box {
+    display: flex;
+    margin: 20px 0;
+}
+
+.experience .year_company {
+    min-width: 150px;
+}
+
+.experience .year_company h5 {
+    text-transform: uppercase;
+    color: var(--company-color);
+    font-weight: 600;
+}
+
+.experience .content h4 {
+    text-transform: uppercase;
+    color: var(--experience-h4-color)
+}
+
+.experience {
+    margin-bottom: 40px;
+}
+
+/* skills section*/
+
+.skill {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.skill h4 {
+    color: var(--skill-h4-color);
+    font-weight: 500;
+}
+
+.skill .percent_container {
+    height: 10px;
+    background-color: var(--skill-percent-container);
+}
+
+.skill .percent {
+    height: 100%;
+    background-color: var(--secondary-color);
+}
+
+.skills {
+    margin-bottom: 40px;
+}
+
+/* interests*/
+
+.interests ul {
+    list-style-type: none;
+    color: var(--p-color);
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.interests i {
+    color: var(--secondary-color);
+    margin-right: 5px;
+    font-size: 18px;
+}
+
+/* Responsive*/
+
+@media (max-width:900px) {
+    .container {
+        grid-template-columns: 1fr;
+        margin: 0;
+    }
+}
+
+@media (max-width:600px) {
+    .experience .box{
+        flex-direction: column;
+    }
+    .skill{
+        grid-template-columns: 1fr;
+    }
+}
+
+/*animation */
+
+@keyframes aboutme{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.about_me{
+    animation-name: aboutme;
+    animation-duration: 4s;
+}
